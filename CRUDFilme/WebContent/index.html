@@ -1,0 +1,86 @@
+﻿<html>
+<head>
+	<meta charset="utf-8">
+	<title>Crud Filmes - Willian</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body class="bg-secondary">
+	<div class="container container-lg container-fluid border bg-light">
+		<div class="row text-center">
+			<div class="col-md-12">
+				<h2>CRUD - Exercício LP II - Filmes</h2>				
+			</div>
+		</div>
+		
+		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+		  <input type="button" class="btn btn-info" value="Novo Filme" onclick="mostraModal()">
+		</nav>
+				
+		<table class="table table-striped text-center" name="filmeLista" id="filmeLista">
+			<thead>
+				<th>Titulo</th>
+				<th>Diretor</th>
+				<th>Estudio</th>
+				<th>Lançamento</th>
+				<th>Duração</th>
+				<th height="10"></th>
+			</thead>
+			<tbody id="tabelaFilme">
+				
+			</tbody>
+		</table>
+		
+	</div>
+	
+
+	<!-- Modal Cadastro / Edição -->
+	<div class="modal fade" id="manForm" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Cadastro de Filme</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="Formfilme">
+						<input type="hidden" id="id" name="id">
+						<div class="form-group">
+							<label for="titulo">Titulo do Filme</label> 
+							<input type="text" class="form-control" id="titulo" placeholder="Titulo do Filme" name="titulo" required>
+						</div>
+						<div class="form-group">
+							<label for="diretor">Diretor</label> 
+							<input type="text" class="form-control" id="diretor" placeholder="Diretor" name="diretor" required>
+						</div>
+						<div class="form-group">
+							<label for="lancamento">Ano de Lançamento</label> 
+							<select class="form-control" id="lancamento" name="lancamento">
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="duracao">Duração (Minutos)</label> 
+							<input type="number" class="form-control" id="duracao" placeholder="Duração (Minutos)" name="duracao" required>
+						</div>
+						<div class="form-group">
+							<label for="estudio">Estúdio</label> 
+							<input type="text" class="form-control" id="estudio" placeholder="Estúdio" name="estudio" required>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-success" onClick="btnSalvar('Formfilme')">Cadastrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="JS/Util.js"></script>
+	<script src="JS/Filme.js"></script>
+	<script> function mostraModal() { $("#manForm").modal("show"); } setAno(); </script>
+</body>
+</html>
